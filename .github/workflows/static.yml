@@ -1,0 +1,21 @@
+</head>
+<body>
+  <div id="video-container">
+    <h1>Video Redirection</h1>
+    <iframe src="https://www.youtube.com/embed/https://youtu.be/9e_adXXGugY?si=huDdYlJlq1nAQZc-&t=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <button id="video-button" style="display: none;">Ir a otra página</button>
+
+  <script>
+    // Función para detectar el fin del video
+    function onVideoEnded() {
+      // Desbloquear el botón
+      document.getElementById("video-button").style.display = "block";
+    }
+
+    // Agregar evento al iframe para detectar el fin del video
+    var iframe = document.getElementById("video-container").getElementsByTagName("iframe")[0];
+    iframe.addEventListener("ended", onVideoEnded);
+  </script>
+</body>
+</html>
